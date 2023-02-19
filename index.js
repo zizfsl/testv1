@@ -1,9 +1,13 @@
 const express = require('express');
 const csv = require('csv-parser');
 const fs = require('fs');
+const cors = require('cors');
 
 const app = express();
 
+app.use(cors(
+  {origin : "*",
+  }));
 app.get('/', (req, res) => {
   const results = [];
 
